@@ -10,6 +10,7 @@ declare var $:any;
 })
 export class AppComponent implements OnInit {
   title = "app";
+  hidden:boolean =true ;
   
 
   ngOnInit() {
@@ -27,17 +28,26 @@ export class AppComponent implements OnInit {
             containment: "document"
           })
         })
-        $('#size').click(function() {
-          let windowHeightSize = $(window).height();
-          let offsetValue = $('#mydiv').offset();
-          let finalHeightSize = windowHeightSize - 418 ;
-          console.log(windowHeightSize);
-          $('#content').toggle('up');
-          $('#mydiv').animate({
-            position: "absolute",
-            top: `${finalHeightSize}px`
-          })
-          console.log(offsetValue);
+        $('#size').click(() => {
+          // let windowHeightSize = $(window).height();
+          // let offsetValue = $('#mydiv').offset();
+          // let finalHeightSize = windowHeightSize - 418 ;
+          // console.log(windowHeightSize);
+          console.log(this.hidden)
+          if(this.hidden){
+            console.log(this.hidden)
+            $('#mydiv').animate({
+              position: "absolute",
+              top: '100px'
+            });
+            $('#content').show(1000);
+            this.hidden = false;
+          }
+          else {
+            $('#content').hide(1000);
+            this.hidden = true;
+          }
+          // console.log(offsetValue);
         });
 
       $('#minimize').click(function() {
