@@ -29,11 +29,7 @@ export class AppComponent implements OnInit {
           })
         })
         $('#size').click(() => {
-          // let windowHeightSize = $(window).height();
-          // let offsetValue = $('#mydiv').offset();
-          // let finalHeightSize = windowHeightSize - 418 ;
-          // console.log(windowHeightSize);
-          console.log(this.hidden)
+           console.log(this.hidden)
           if(this.hidden){
             console.log(this.hidden)
             $('#mydiv').animate({
@@ -47,7 +43,7 @@ export class AppComponent implements OnInit {
             $('#content').hide(1000);
             this.hidden = true;
           }
-          // console.log(offsetValue);
+          
         });
 
       $('#minimize').click(function() {
@@ -58,13 +54,7 @@ export class AppComponent implements OnInit {
           position: "absolute",
           top: "10px",
           left: `${finalSize}px`
-        })
-        // $('#mydiv').animate({
-        //   position: "absolute",
-        //   top: "0px",
-        //   left: "0px"
-        //   // left: "1395px"
-        // })
+        })        
     });
       }
 }
